@@ -1,16 +1,9 @@
-sudo: true
-
-language: c
+language: java
 
 install: 
-  - sudo apt-get install swig
-  - cd ..
-  - git clone https://github.com/mozilla/sphinxbase
-  - cd sphinxbase
-  - ./autogen.sh
-  - ./configure && make && sudo make install
-  - cd ../pocketsphinx
-  - ./autogen.sh
-  - ./configure
-  - make
-  - sudo make install
+  - ./build-java-bindins.sh
+
+addons:
+  apt:
+    packages:
+    - swig
